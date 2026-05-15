@@ -118,3 +118,15 @@ at end-of-day and on save reload.
   `Spawn and Fill Snack`.
 - Gamemode reference cached to avoid repeated `FindAllOf` calls on hot paths.
 - Daily tracker reset added for end-of-day and save-reload events.
+
+## License
+Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
