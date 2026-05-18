@@ -1,0 +1,41 @@
+# ── Required Fields ───────────────────────────────────────────────────────────
+
+name: "Auto Restock Snacks QoL"
+author: "Xerduntis"
+version: "1.9.1"
+mod_type: lua
+
+# ── Optional Fields ───────────────────────────────────────────────────────────
+
+description: "Automatically restocks snack shelves, fridges, and candy dispensers when the store opens and at configured ingame hours. Deducts purchase costs from funds."
+
+# Nexus Mods IDs — used for update checking.
+
+config:
+  - key: Debug
+    label: "Debug Mode"
+    type: bool
+    default: false
+
+  - key: restockHours
+    label: "Additional Restock Hours"
+    description: "Ingame hours that trigger a restock after opening. Max. 24 entries."
+    type: table
+    columns:
+      - key: hour
+        label: "Hour (0-23)"
+        type: int
+    default:
+      - { hour: 18 }
+
+  - key: deductCost
+    label: "Deduct Restock Cost"
+    description: "Deducts snack purchase costs from your funds on restock. Set to false for free restocking."
+    type: bool
+    default: true
+
+  - key: restockCandy
+    label: "Restock Candy Dispensers"
+    description: "Also refills candy dispensers on restock."
+    type: bool
+    default: true

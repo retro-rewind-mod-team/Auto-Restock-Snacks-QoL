@@ -1,6 +1,6 @@
 -- ============================================================
 -- Retro Rewind - Auto Restock Snacks
--- Version: 1.9
+-- Version: 2.0
 --
 -- Automatically restocks snack shelves, fridges, and candy
 -- dispensers when the store opens, and again at configured
@@ -8,15 +8,7 @@
 -- credits candy dispenser revenue to the player's account.
 -- ============================================================
 
--- ============================================================
--- CONFIG
--- ============================================================
-local CONFIG = {
-    restockHours = { 18 }, -- Additional restock hours after opening
-    deductCost = true,     -- Set to false for free snack restock
-    restockCandy = true,   -- Set to false to skip candy dispensers
-    Debug = false,         -- true = log hook registrations and internal errors
-}
+local CONFIG = require("config")
 
 -- ============================================================
 -- CONSTANTS
@@ -65,7 +57,7 @@ local openedAtHour    = -1
 
 -- Pre-built set for O(1) lookup during the per-minute timer
 local restockHourSet = {}
-for _, h in ipairs(CONFIG.restockHours) do restockHourSet[h] = true end
+for _, entry in ipairs(CONFIG.restockHours) do restockHourSet[entry.hour] = true end
 
 -- ============================================================
 -- CACHED REFERENCE: Core_Gamemode_C
